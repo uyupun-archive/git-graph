@@ -11,7 +11,7 @@ class GrassesController extends Controller
 
         $crawler = Goutte::request('GET', 'https://github.com/' . $request->name);
         $response = $crawler->filter('.day')->each(function ($element) {
-            return $element->attr('data-count');
+            return intval($element->attr('data-count'));
         });
 
         return response($response, '200');

@@ -47280,22 +47280,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            name: ''
+            name: '',
+            grasses: []
         };
     },
 
     methods: {
         send: function send() {
+            var _this = this;
+
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/grasses', {
                 name: this.name
             }).then(function (response) {
-                console.log(response.data);
+                _this.grasses = response.data;
             }).catch(function (error) {
                 console.log(error.response);
             });
@@ -47342,7 +47350,18 @@ var render = function() {
         on: { click: _vm.send }
       },
       [_vm._v("Send")]
-    )
+    ),
+    _vm._v(" "),
+    _vm.grasses.length > 0
+      ? _c(
+          "ul",
+          _vm._l(_vm.grasses, function(grass) {
+            return _c("li", [
+              _vm._v("\n            " + _vm._s(grass) + "\n        ")
+            ])
+          })
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

@@ -2,6 +2,11 @@
     <div class="container">
         <input type="text" class="form-control" v-model="name">
         <button type="button" class="btn btn-primary" @click="send">Send</button>
+        <ul v-if="grasses.length > 0">
+            <li v-for="grass in grasses">
+                {{ grass }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -11,7 +16,8 @@
     export default {
         data() {
             return {
-                name: ''
+                name: '',
+                grasses: []
             }
         },
         methods: {
@@ -20,7 +26,7 @@
                     name: this.name
                 })
                     .then(response => {
-                        console.log(response.data)
+                        this.grasses = response.data
                     })
                     .catch(error => {
                         console.log(error.response)
