@@ -47285,13 +47285,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            name: ''
+        };
     },
 
     methods: {
         send: function send() {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/grasses', {
-                data: 'test'
+                name: this.name
             }).then(function (response) {
                 console.log(response.data);
             }).catch(function (error) {
@@ -47310,7 +47312,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("input", { staticClass: "form-control", attrs: { type: "text" } }),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.name,
+          expression: "name"
+        }
+      ],
+      staticClass: "form-control",
+      attrs: { type: "text" },
+      domProps: { value: _vm.name },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.name = $event.target.value
+        }
+      }
+    }),
     _vm._v(" "),
     _c(
       "button",
