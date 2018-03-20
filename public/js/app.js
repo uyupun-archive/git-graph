@@ -65801,7 +65801,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         adjustGrasses: function adjustGrasses(grasses) {
-            console.log(grasses);
             outside: for (var i = 0; i < grasses.length; i += 7) {
                 var sum = 0;
                 for (var j = 0; j < 7; j++) {
@@ -65835,7 +65834,7 @@ var render = function() {
         }
       ],
       staticClass: "form-control",
-      attrs: { type: "text" },
+      attrs: { type: "text", placeholder: "Please enter GitHub user name" },
       domProps: { value: _vm.name },
       on: {
         input: function($event) {
@@ -65926,6 +65925,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(179);
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 
 
@@ -65935,9 +65935,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             datacollection: {
-                labels: ['1週', '2週', '3週', '4週', '5週', '6週', '7週', '8週', '9週', '10週', '11週', '12週', '13週', '14週', '15週', '16週', '17週', '18週', '19週', '20週', '21週', '22週', '23週', '24週', '25週', '26週', '27週', '28週', '29週', '30週', '31週', '32週', '33週', '34週', '35週', '36週', '37週', '38週', '39週', '40週', '41週', '42週', '43週', '44週', '45週', '46週', '47週', '48週', '49週', '50週', '51週', '52週'],
+                labels: Array.from(new Array(this.grasses.length)).map(function (v, i) {
+                    return String(i + 1);
+                }),
                 datasets: [{
-                    label: 'Prime and Fibonacci',
+                    label: 'tyokinuhata',
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     borderColor: '#81b77d',
                     radius: 0,
@@ -65950,15 +65952,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         ticks: {
                             beginAtZero: true,
                             min: 0,
-                            max: 1000
+                            max: Math.ceil(Math.max.apply(Math, _toConsumableArray(this.grasses)) / 100) * 100
                         },
                         gridLines: {
                             display: false
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'commits',
+                            fontSize: 14
                         }
                     }],
                     xAxes: [{
                         gridLines: {
                             display: false
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'weeks',
+                            fontSize: 14
                         }
                     }]
                 },

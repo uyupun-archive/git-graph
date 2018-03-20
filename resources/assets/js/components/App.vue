@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <input type="text" class="form-control" v-model="name">
+        <input type="text" class="form-control" v-model="name" placeholder="Please enter GitHub user name">
         <button type="button" class="btn btn-primary" @click="sendName">Send</button>
         <ul v-if="grasses.length > 0">
             <graph :grasses="grasses"></graph>
@@ -35,7 +35,6 @@
                     })
             },
             adjustGrasses(grasses) {
-                console.log(grasses)
                 outside: for (let i = 0; i < grasses.length; i += 7) {
                     let sum = 0
                     for (let j = 0; j < 7; j++) {
