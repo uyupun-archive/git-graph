@@ -3,17 +3,19 @@
         <input type="text" class="form-control" v-model="name">
         <button type="button" class="btn btn-primary" @click="send">Send</button>
         <ul v-if="grasses.length > 0">
-            <li v-for="grass in grasses">
-                {{ grass }}
-            </li>
+            <graph :grasses="grasses"></graph>
         </ul>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
+    import Graph from './Graph.vue'
 
     export default {
+        components: {
+            Graph
+        },
         data() {
             return {
                 name: '',
