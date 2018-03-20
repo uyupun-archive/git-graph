@@ -2,9 +2,9 @@
     <div class="container">
         <input type="text" class="form-control" v-model="name" placeholder="Please enter GitHub user name">
         <button type="button" class="btn btn-primary" @click="sendName">Send</button>
-        <ul v-if="grasses.length > 0">
+        <div v-if="grasses.length > 0" class="graphWrapper">
             <graph :grasses="grasses"></graph>
-        </ul>
+        </div>
     </div>
 </template>
 

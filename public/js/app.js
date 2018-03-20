@@ -65857,7 +65857,12 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.grasses.length > 0
-      ? _c("ul", [_c("graph", { attrs: { grasses: _vm.grasses } })], 1)
+      ? _c(
+          "div",
+          { staticClass: "graphWrapper" },
+          [_c("graph", { attrs: { grasses: _vm.grasses } })],
+          1
+        )
       : _vm._e()
   ])
 }
