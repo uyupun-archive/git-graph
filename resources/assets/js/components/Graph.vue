@@ -9,27 +9,14 @@
         data() {
             return {
                 datacollection: {
-                    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    labels: [ '1週', '2週', '3週', '4週', '5週', '6週', '7週', '8週', '9週', '10週', '11週', '12週', '13週', '14週', '15週', '16週', '17週', '18週', '19週', '20週', '21週', '22週', '23週', '24週', '25週', '26週', '27週', '28週', '29週', '30週', '31週', '32週', '33週', '34週', '35週', '36週', '37週', '38週', '39週', '40週', '41週', '42週', '43週', '44週', '45週', '46週', '47週', '48週', '49週', '50週', '51週', '52週'],
                     datasets: [{
-                        label: "Prime and Fibonacci",
-                        fillColor: "rgba(220,220,220,0.2)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(220,220,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-                    },
-                    {
-                        label: "My Second dataset",
-                        fillColor: "rgba(151,187,205,0.2)",
-                        strokeColor: "rgba(151,187,205,1)",
-                        pointColor: "rgba(151,187,205,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(151,187,205,1)",
-                        data: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-                    }]
+                        label: 'Prime and Fibonacci',
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        borderColor: '#81b77d',
+                        radius: 0,
+                        data: this.grasses
+                    }],
                 },
                 options: {
                     scales: {
@@ -40,12 +27,12 @@
                                 max: 1000
                             },
                             gridLines: {
-                                display: true
+                                display: false
                             }
                         }],
                         xAxes: [{
                             gridLines: {
-                                display: true
+                                display: false
                             }
                         }],
                     },
@@ -59,7 +46,6 @@
         },
         mounted() {
             this.renderChart(this.datacollection, this.options)
-            console.log(this.grasses)
         }
     }
 </script>
