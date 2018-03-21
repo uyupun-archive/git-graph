@@ -66020,7 +66020,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                 datasets: [{
                     label: 'tyokinuhata',
                     backgroundColor: 'rgba(0, 0, 0, 0)',
-                    borderColor: '#81b77d',
+                    borderColor: '#3cb371',
                     radius: 0,
                     data: this.grasses
                 }]
@@ -66038,7 +66038,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'commits',
+                            labelString: 'contributes',
                             fontSize: 14
                         }
                     }],

@@ -13,7 +13,7 @@
                     datasets: [{
                         label: 'tyokinuhata',
                         backgroundColor: 'rgba(0, 0, 0, 0)',
-                        borderColor: '#81b77d',
+                        borderColor: '#3cb371',
                         radius: 0,
                         data: this.grasses
                     }],
@@ -31,7 +31,7 @@
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'commits',
+                                labelString: 'contributes',
                                 fontSize: 14
                             },
                         }],
