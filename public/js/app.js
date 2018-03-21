@@ -65781,6 +65781,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -65820,32 +65823,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("forms", { on: { "form-event": _vm.adjustGrasses } }),
-      _vm._v(" "),
-      _vm.grasses.length > 0
-        ? _c("div", { staticClass: "graphWrapper" }, [
-            _c(
-              "div",
-              { staticClass: "graphWrapper" },
-              [_c("graph", { attrs: { grasses: _vm.grasses } })],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "graphWrapper" },
-              [_c("info", { attrs: { grasses: _vm.grasses } })],
-              1
-            )
-          ])
-        : _vm._e()
-    ],
-    1
-  )
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", { staticClass: "title" }, [_vm._v("GitGraph")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "formWrapper" },
+      [_c("forms", { on: { "form-event": _vm.adjustGrasses } })],
+      1
+    ),
+    _vm._v(" "),
+    _vm.grasses.length > 0
+      ? _c("div", { staticClass: "graphWrapper" }, [
+          _c(
+            "div",
+            { staticClass: "graphWrapper" },
+            [_c("graph", { attrs: { grasses: _vm.grasses } })],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "graphWrapper" },
+            [_c("info", { attrs: { grasses: _vm.grasses } })],
+            1
+          )
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -78884,8 +78889,8 @@ var render = function() {
           expression: "name"
         }
       ],
-      staticClass: "form-control",
-      attrs: { type: "text", placeholder: "Please enter GitHub user name" },
+      staticClass: "form-control formName",
+      attrs: { type: "text", placeholder: "Please enter username" },
       domProps: { value: _vm.name },
       on: {
         input: function($event) {
@@ -78900,7 +78905,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-primary",
+        staticClass: "btn btn-primary formSend",
         attrs: { type: "button" },
         on: { click: _vm.sendName }
       },

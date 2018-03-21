@@ -1,7 +1,7 @@
 <template>
     <div>
-        <input type="text" class="form-control" v-model="name" placeholder="Please enter GitHub user name">
-        <button type="button" class="btn btn-primary" @click="sendName">Send</button>
+        <input type="text" class="form-control formName" v-model="name" placeholder="Please enter username">
+        <button type="button" class="btn btn-primary formSend" @click="sendName">Send</button>
     </div>
 </template>
 

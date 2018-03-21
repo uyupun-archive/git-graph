@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <forms @form-event="adjustGrasses"></forms>
+        <h1 class="title">GitGraph</h1>
+        <div class="formWrapper">
+            <forms @form-event="adjustGrasses"></forms>
+        </div>
         <div v-if="grasses.length > 0" class="graphWrapper">
             <div class="graphWrapper">
                 <graph :grasses="grasses"></graph>
