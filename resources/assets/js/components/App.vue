@@ -31,12 +31,9 @@
         },
         methods: {
             adjustGrasses(grasses) {
-                outside: for (let i = 0; i < grasses.length; i += 7) {
+                for (let i = 0; i < grasses.length; i += 7) {
                     let sum = 0
-                    for (let j = 0; j < 7; j++) {
-                        if (isNaN(grasses[i + j])) {
-                            break outside
-                        }
+                    for (let j = 0; j < 7 && i + j < grasses.length; j++) {
                         sum += grasses[i + j]
                     }
                     this.grasses.push(sum)

@@ -65801,12 +65801,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         adjustGrasses: function adjustGrasses(grasses) {
-            outside: for (var i = 0; i < grasses.length; i += 7) {
+            for (var i = 0; i < grasses.length; i += 7) {
                 var sum = 0;
-                for (var j = 0; j < 7; j++) {
-                    if (isNaN(grasses[i + j])) {
-                        break outside;
-                    }
+                for (var j = 0; j < 7 && i + j < grasses.length; j++) {
                     sum += grasses[i + j];
                 }
                 this.grasses.push(sum);
@@ -78984,11 +78981,11 @@ var render = function() {
         _c("tr", [
           _c("td", [_vm._v(_vm._s(_vm.sum))]),
           _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.avg))]),
+          _vm._v(" "),
           _c("td", [_vm._v(_vm._s(_vm.min))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(_vm.max))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.avg))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(_vm.median))])
         ])
@@ -79005,11 +79002,11 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Sum")]),
         _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Avg")]),
+        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Min")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Max")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Average")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Median")])
       ])
@@ -79100,9 +79097,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     data: function data() {
         return {
             sum: 0,
+            avg: 0,
             min: Math.min.apply(Math, _toConsumableArray(this.grasses)),
             max: Math.max.apply(Math, _toConsumableArray(this.grasses)),
-            avg: 0,
             median: 0
         };
     },
@@ -79114,14 +79111,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
             });
         },
         calcAvg: function calcAvg(grasses) {
-            return calcSum(grasses) / grasses.length;
+            return Math.round(this.calcSum(grasses) / grasses.length);
         },
         calcMedian: function calcMedian() {}
     },
     created: function created() {
-        console.log(this.calcSum(this.grasses));
-        //            this.calcSum(this.grasses)
-        //            this.calcAvg(this.grasses)
+        this.sum = this.calcSum(this.grasses);
+        this.avg = this.calcAvg(this.grasses);
     }
 });
 
