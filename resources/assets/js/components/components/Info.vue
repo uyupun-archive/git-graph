@@ -6,18 +6,18 @@
                 <tr>
                     <th scope="col">Sum</th>
                     <th scope="col">Avg</th>
+                    <th scope="col">Median</th>
                     <th scope="col">Min</th>
                     <th scope="col">Max</th>
-                    <th scope="col">Median</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>{{ week.sum }}</td>
                     <td>{{ week.avg }}</td>
+                    <td>{{ week.median }}</td>
                     <td>{{ week.min }}</td>
                     <td>{{ week.max }}</td>
-                    <td>{{ week.median }}</td>
                 </tr>
             </tbody>
         </table>
@@ -28,18 +28,18 @@
             <tr>
                 <th scope="col">Sum</th>
                 <th scope="col">Avg</th>
+                <th scope="col">Median</th>
                 <th scope="col">Min</th>
                 <th scope="col">Max</th>
-                <th scope="col">Median</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>{{ day.sum }}</td>
                 <td>{{ day.avg }}</td>
+                <td>{{ day.median }}</td>
                 <td>{{ day.min }}</td>
                 <td>{{ day.max }}</td>
-                <td>{{ day.median }}</td>
             </tr>
             </tbody>
         </table>
