@@ -54,3 +54,22 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 48px;
+    }
+
+    .formWrapper {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .message {
+        width: 20px;
+        height: 20px;
+        background: red;
+    }
+</style>

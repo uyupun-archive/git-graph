@@ -31,3 +31,19 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .formName {
+        display: inline-block;
+        width: 200px;
+        vertical-align : middle;
+        margin-right: 3px;
+    }
+
+    .graphWrapper {
+        margin-top: 20px;
+        border-radius: 3px;
+        padding: 5px;
+        background: #fff;
+    }
+</style>
