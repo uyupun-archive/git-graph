@@ -44,13 +44,26 @@
             calcAvg(grasses) {
                 return Math.round(this.calcSum(grasses) / grasses.length)
             },
-            calcMedian() {
-
+            calcMedian(grasses) {
+                grasses = Object.assign([], grasses)
+                grasses.sort((prev, current) => {
+                    if (prev < current)  return -1
+                    if (prev > current)  return 1
+                    return 0
+                })
+                if (grasses.length % 2 === 0) {
+                    return grasses[grasses.length / 2]
+                } else {
+                    const ceil = grasses[Math.ceil(grasses.length / 2)]
+                    const floor = grasses[Math.floor(grasses.length / 2)]
+                    return Math.round((ceil + floor) / 2)
+                }
             }
         },
         created() {
             this.sum = this.calcSum(this.grasses)
             this.avg = this.calcAvg(this.grasses)
+            this.median = this.calcMedian(this.grasses)
         }
     }
 </script>
