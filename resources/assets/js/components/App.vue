@@ -5,15 +5,15 @@
             <div class="formWrapper">
                 <forms @form-grasses="callBoth" @form-data="setData"></forms>
             </div>
-            <div v-if="weeks.length > 0" class="graphWrapper">
+            <div v-if="weeks.length > 0">
                 <div class="graphWrapper">
                     <graph :weeks="weeks" :days="days" :name="name"></graph>
                 </div>
-                <div class="graphWrapper">
+                <div class="infoWrapper">
                     <info :weeks="weeks" :days="days"></info>
                 </div>
             </div>
-            <div v-else-if="message.length > 0">
+            <div v-else-if="message.length > 0" class="msgWrapper">
                 <p>{{ message }}</p>
             </div>
             <div v-else>
@@ -81,9 +81,20 @@
         text-align: center;
     }
 
+    .infoWrapper {
+        margin-top: 10px;
+        text-align: center;
+    }
+
     .load {
         width: 20px;
         height: 20px;
         background: red;
+    }
+
+    .msgWrapper {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 32px;
     }
 </style>
