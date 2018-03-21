@@ -65784,6 +65784,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -65798,7 +65801,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            grasses: []
+            grasses: [],
+            message: ''
         };
     },
 
@@ -65811,6 +65815,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
                 this.grasses.push(sum);
             }
+        },
+        setMsg: function setMsg(message) {
+            this.message = message;
         }
     }
 });
@@ -65887,10 +65894,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendName: function sendName() {
             var _this = this;
 
+            this.$emit('form-msg', 'Loading now ...');
             axios.post('/api/grasses', {
                 name: this.name
             }).then(function (response) {
-                _this.$emit('form-event', response.data);
+                _this.$emit('form-grasses', response.data);
             }).catch(function (error) {
                 console.log(error.response);
             });
@@ -79094,7 +79102,11 @@ var render = function() {
     _c(
       "div",
       { staticClass: "formWrapper" },
-      [_c("forms", { on: { "form-event": _vm.adjustGrasses } })],
+      [
+        _c("forms", {
+          on: { "form-event": _vm.adjustGrasses, "form-msg": _vm.setMsg }
+        })
+      ],
       1
     ),
     _vm._v(" "),
@@ -79114,7 +79126,7 @@ var render = function() {
             1
           )
         ])
-      : _vm._e()
+      : _c("div", [_c("p", [_vm._v(_vm._s(_vm.message))])])
   ])
 }
 var staticRenderFns = []
