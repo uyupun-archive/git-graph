@@ -16,3 +16,9 @@ $ npm run watch
 ```bash
 $ php artisan serve
 ```
+
+### Minify
+
+```bash
+$ npm run min
+```
