@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="title">GitGraph</h1>
         <div class="formWrapper">
-            <forms @form-event="adjustGrasses" @form-msg="setMsg"></forms>
+            <forms @form-grasses="adjustGrasses" @form-msg="setMsg"></forms>
         </div>
         <div v-if="grasses.length > 0" class="graphWrapper">
             <div class="graphWrapper">
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div v-else>
-            <p>{{ message }}</p>
+            <div :class="message"></div>
         </div>
     </div>
 </template>

@@ -14,7 +14,7 @@
         },
         methods: {
             sendName() {
-                this.$emit('form-msg', 'Loading now ...')
+                this.$emit('form-msg', 'message')
                 axios.post('/api/grasses', {
                     name: this.name
                 })

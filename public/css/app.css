@@ -10019,3 +10019,9 @@ a.text-dark:focus {
   background: #fff;
 }
 
+.message {
+  width: 20px;
+  height: 20px;
+  background: red;
+}
+

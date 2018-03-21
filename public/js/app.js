@@ -65894,7 +65894,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendName: function sendName() {
             var _this = this;
 
-            this.$emit('form-msg', 'Loading now ...');
+            this.$emit('form-msg', 'message');
             axios.post('/api/grasses', {
                 name: this.name
             }).then(function (response) {
@@ -79104,7 +79104,7 @@ var render = function() {
       { staticClass: "formWrapper" },
       [
         _c("forms", {
-          on: { "form-event": _vm.adjustGrasses, "form-msg": _vm.setMsg }
+          on: { "form-grasses": _vm.adjustGrasses, "form-msg": _vm.setMsg }
         })
       ],
       1
@@ -79126,7 +79126,7 @@ var render = function() {
             1
           )
         ])
-      : _c("div", [_c("p", [_vm._v(_vm._s(_vm.message))])])
+      : _c("div", [_c("div", { class: _vm.message })])
   ])
 }
 var staticRenderFns = []
