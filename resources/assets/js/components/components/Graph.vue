@@ -4,19 +4,19 @@
     export default {
         extends: Line,
         props: [
-            'grasses',
+            'weeks',
             'name'
         ],
         data() {
             return {
                 datacollection: {
-                    labels: Array.from(new Array(this.grasses.length)).map((v, i) => String(i + 1)),
+                    labels: Array.from(new Array(this.weeks.length)).map((v, i) => String(i + 1)),
                     datasets: [{
                         label: this.name,
                         backgroundColor: 'rgba(0, 0, 0, 0)',
                         borderColor: '#3cb371',
                         radius: 0,
-                        data: this.grasses
+                        data: this.weeks
                     }],
                 },
                 options: {
@@ -25,7 +25,7 @@
                             ticks: {
                                 beginAtZero: true,
                                 min: 0,
-                                max: Math.ceil(Math.max(...this.grasses) / 100) * 100
+                                max: Math.ceil(Math.max(...this.weeks) / 100) * 100
                             },
                             gridLines: {
                                 display: false
@@ -42,7 +42,7 @@
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'weeks',
+                                labelString: 'weekss',
                                 fontSize: 14
                             },
                         }],

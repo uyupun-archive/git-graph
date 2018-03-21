@@ -1,5 +1,6 @@
 <template>
     <div>
+        <caption>Weekly</caption>
         <table class="table">
             <thead>
                 <tr>
@@ -12,12 +13,34 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ sum }}</td>
-                    <td>{{ avg }}</td>
-                    <td>{{ min }}</td>
-                    <td>{{ max }}</td>
-                    <td>{{ median }}</td>
+                    <td>{{ week.sum }}</td>
+                    <td>{{ week.avg }}</td>
+                    <td>{{ week.min }}</td>
+                    <td>{{ week.max }}</td>
+                    <td>{{ week.median }}</td>
                 </tr>
+            </tbody>
+        </table>
+
+        <caption>Daily</caption>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Sum</th>
+                <th scope="col">Avg</th>
+                <th scope="col">Min</th>
+                <th scope="col">Max</th>
+                <th scope="col">Median</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ day.sum }}</td>
+                <td>{{ day.avg }}</td>
+                <td>{{ day.min }}</td>
+                <td>{{ day.max }}</td>
+                <td>{{ day.median }}</td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -25,14 +48,26 @@
 
 <script>
     export default {
-        props: ['grasses'],
+        props: [
+            'weeks',
+            'days'
+        ],
         data() {
             return {
-                sum: 0,
-                avg: 0,
-                min: Math.min(...this.grasses),
-                max: Math.max(...this.grasses),
-                median: 0,
+                week: {
+                    sum: 0,
+                    avg: 0,
+                    min: Math.min(...this.weeks),
+                    max: Math.max(...this.weeks),
+                    median: 0,
+                },
+                day: {
+                    sum: 0,
+                    avg: 0,
+                    min: Math.min(...this.days),
+                    max: Math.max(...this.days),
+                    median: 0,
+                },
             }
         },
         methods: {
@@ -61,9 +96,13 @@
             }
         },
         created() {
-            this.sum = this.calcSum(this.grasses)
-            this.avg = this.calcAvg(this.grasses)
-            this.median = this.calcMedian(this.grasses)
+            this.week.sum = this.calcSum(this.weeks)
+            this.week.avg = this.calcAvg(this.weeks)
+            this.week.median = this.calcMedian(this.weeks)
+
+            this.day.sum = this.calcSum(this.days)
+            this.day.avg = this.calcAvg(this.days)
+            this.day.median = this.calcMedian(this.days)
         }
     }
 </script>

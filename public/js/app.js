@@ -66197,7 +66197,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            grasses: [],
+            weeks: [],
+            days: [],
             message: '',
             load: '',
             name: ''
@@ -66206,6 +66207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         callBoth: function callBoth(grasses) {
+            this.days = Object.assign([], grasses);
             if (typeof grasses === 'string') {
                 this.showMsg(grasses);
             } else {
@@ -66221,7 +66223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var j = 0; j < 7 && i + j < grasses.length; j++) {
                     sum += grasses[i + j];
                 }
-                this.grasses.push(sum);
+                this.weeks.push(sum);
             }
         },
         setData: function setData(data) {
@@ -66385,11 +66387,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["a" /* Line */],
-    props: ['grasses', 'name'],
+    props: ['weeks', 'name'],
     data: function data() {
         return {
             datacollection: {
-                labels: Array.from(new Array(this.grasses.length)).map(function (v, i) {
+                labels: Array.from(new Array(this.weeks.length)).map(function (v, i) {
                     return String(i + 1);
                 }),
                 datasets: [{
@@ -66397,7 +66399,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     borderColor: '#3cb371',
                     radius: 0,
-                    data: this.grasses
+                    data: this.weeks
                 }]
             },
             options: {
@@ -66406,7 +66408,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                         ticks: {
                             beginAtZero: true,
                             min: 0,
-                            max: Math.ceil(Math.max.apply(Math, _toConsumableArray(this.grasses)) / 100) * 100
+                            max: Math.ceil(Math.max.apply(Math, _toConsumableArray(this.weeks)) / 100) * 100
                         },
                         gridLines: {
                             display: false
@@ -66423,7 +66425,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'weeks',
+                            labelString: 'weekss',
                             fontSize: 14
                         }
                     }]
@@ -79353,16 +79355,48 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['grasses'],
+    props: ['weeks', 'days'],
     data: function data() {
         return {
-            sum: 0,
-            avg: 0,
-            min: Math.min.apply(Math, _toConsumableArray(this.grasses)),
-            max: Math.max.apply(Math, _toConsumableArray(this.grasses)),
-            median: 0
+            week: {
+                sum: 0,
+                avg: 0,
+                min: Math.min.apply(Math, _toConsumableArray(this.weeks)),
+                max: Math.max.apply(Math, _toConsumableArray(this.weeks)),
+                median: 0
+            },
+            day: {
+                sum: 0,
+                avg: 0,
+                min: Math.min.apply(Math, _toConsumableArray(this.days)),
+                max: Math.max.apply(Math, _toConsumableArray(this.days)),
+                median: 0
+            }
         };
     },
 
@@ -79392,9 +79426,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         }
     },
     created: function created() {
-        this.sum = this.calcSum(this.grasses);
-        this.avg = this.calcAvg(this.grasses);
-        this.median = this.calcMedian(this.grasses);
+        this.week.sum = this.calcSum(this.weeks);
+        this.week.avg = this.calcAvg(this.weeks);
+        this.week.median = this.calcMedian(this.weeks);
+
+        this.day.sum = this.calcSum(this.days);
+        this.day.avg = this.calcAvg(this.days);
+        this.day.median = this.calcMedian(this.days);
     }
 });
 
@@ -79407,26 +79445,66 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("caption", [_vm._v("Weekly")]),
+    _vm._v(" "),
     _c("table", { staticClass: "table" }, [
       _vm._m(0),
       _vm._v(" "),
       _c("tbody", [
         _c("tr", [
-          _c("td", [_vm._v(_vm._s(_vm.sum))]),
+          _c("td", [_vm._v(_vm._s(_vm.week.sum))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.avg))]),
+          _c("td", [_vm._v(_vm._s(_vm.week.avg))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.min))]),
+          _c("td", [_vm._v(_vm._s(_vm.week.min))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.max))]),
+          _c("td", [_vm._v(_vm._s(_vm.week.max))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.median))])
+          _c("td", [_vm._v(_vm._s(_vm.week.median))])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("caption", [_vm._v("Daily")]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c("tbody", [
+        _c("tr", [
+          _c("td", [_vm._v(_vm._s(_vm.day.sum))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.day.avg))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.day.min))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.day.max))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.day.median))])
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Sum")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Avg")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Min")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Max")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Median")])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -79480,14 +79558,14 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _vm.grasses.length > 0
+        _vm.weeks.length > 0
           ? _c("div", { staticClass: "graphWrapper" }, [
               _c(
                 "div",
                 { staticClass: "graphWrapper" },
                 [
                   _c("graph", {
-                    attrs: { grasses: _vm.grasses, name: _vm.name }
+                    attrs: { weeks: _vm.weeks, days: _vm.days, name: _vm.name }
                   })
                 ],
                 1
@@ -79496,7 +79574,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "graphWrapper" },
-                [_c("info", { attrs: { grasses: _vm.grasses } })],
+                [_c("info", { attrs: { weeks: _vm.weeks, days: _vm.days } })],
                 1
               )
             ])

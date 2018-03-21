@@ -5,12 +5,12 @@
             <div class="formWrapper">
                 <forms @form-grasses="callBoth" @form-data="setData"></forms>
             </div>
-            <div v-if="grasses.length > 0" class="graphWrapper">
+            <div v-if="weeks.length > 0" class="graphWrapper">
                 <div class="graphWrapper">
-                    <graph :grasses="grasses" :name="name"></graph>
+                    <graph :weeks="weeks" :days="days" :name="name"></graph>
                 </div>
                 <div class="graphWrapper">
-                    <info :grasses="grasses"></info>
+                    <info :weeks="weeks" :days="days"></info>
                 </div>
             </div>
             <div v-else-if="message.length > 0">
@@ -39,7 +39,8 @@
         },
         data() {
             return {
-                grasses: [],
+                weeks: [],
+                days: [],
                 message: '',
                 load: '',
                 name: ''
@@ -47,6 +48,7 @@
         },
         methods: {
             callBoth(grasses) {
+                this.days = Object.assign([], grasses)
                 if (typeof grasses === 'string') {
                     this.showMsg(grasses)
                 } else {
@@ -62,7 +64,7 @@
                     for (let j = 0; j < 7 && i + j < grasses.length; j++) {
                         sum += grasses[i + j]
                     }
-                    this.grasses.push(sum)
+                    this.weeks.push(sum)
                 }
             },
             setData(data) {
