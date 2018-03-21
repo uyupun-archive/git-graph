@@ -4,14 +4,15 @@
     export default {
         extends: Line,
         props: [
-            'grasses'
+            'grasses',
+            'name'
         ],
         data() {
             return {
                 datacollection: {
                     labels: Array.from(new Array(this.grasses.length)).map((v, i) => String(i + 1)),
                     datasets: [{
-                        label: 'tyokinuhata',
+                        label: this.name,
                         backgroundColor: 'rgba(0, 0, 0, 0)',
                         borderColor: '#3cb371',
                         radius: 0,

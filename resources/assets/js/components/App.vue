@@ -2,11 +2,11 @@
     <div class="container">
         <h1 class="title">GitGraph</h1>
         <div class="formWrapper">
-            <forms @form-grasses="adjustGrasses" @form-msg="setMsg"></forms>
+            <forms @form-grasses="adjustGrasses" @form-data="setData"></forms>
         </div>
         <div v-if="grasses.length > 0" class="graphWrapper">
             <div class="graphWrapper">
-                <graph :grasses="grasses"></graph>
+                <graph :grasses="grasses" :name="name"></graph>
             </div>
             <div class="graphWrapper">
                 <info :grasses="grasses"></info>
@@ -34,6 +34,7 @@
             return {
                 grasses: [],
                 message: '',
+                name: ''
             }
         },
         methods: {
@@ -46,8 +47,9 @@
                     this.grasses.push(sum)
                 }
             },
-            setMsg(message) {
-                this.message = message
+            setData(data) {
+                this.message = data.message
+                this.name = data.name
             }
         }
     }

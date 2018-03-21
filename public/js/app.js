@@ -65802,7 +65802,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             grasses: [],
-            message: ''
+            message: '',
+            name: ''
         };
     },
 
@@ -65816,8 +65817,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.grasses.push(sum);
             }
         },
-        setMsg: function setMsg(message) {
-            this.message = message;
+        setData: function setData(data) {
+            this.message = data.message;
+            this.name = data.name;
         }
     }
 });
@@ -65894,7 +65896,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendName: function sendName() {
             var _this = this;
 
-            this.$emit('form-msg', 'message');
+            this.$emit('form-data', {
+                message: 'message',
+                name: this.name
+            });
             axios.post('/api/grasses', {
                 name: this.name
             }).then(function (response) {
@@ -66018,7 +66023,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["a" /* Line */],
-    props: ['grasses'],
+    props: ['grasses', 'name'],
     data: function data() {
         return {
             datacollection: {
@@ -66026,7 +66031,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                     return String(i + 1);
                 }),
                 datasets: [{
-                    label: 'tyokinuhata',
+                    label: this.name,
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     borderColor: '#3cb371',
                     radius: 0,
@@ -79104,7 +79109,7 @@ var render = function() {
       { staticClass: "formWrapper" },
       [
         _c("forms", {
-          on: { "form-grasses": _vm.adjustGrasses, "form-msg": _vm.setMsg }
+          on: { "form-grasses": _vm.adjustGrasses, "form-data": _vm.setData }
         })
       ],
       1
@@ -79115,7 +79120,7 @@ var render = function() {
           _c(
             "div",
             { staticClass: "graphWrapper" },
-            [_c("graph", { attrs: { grasses: _vm.grasses } })],
+            [_c("graph", { attrs: { grasses: _vm.grasses, name: _vm.name } })],
             1
           ),
           _vm._v(" "),
