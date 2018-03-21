@@ -65777,6 +65777,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -65800,7 +65804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             outside: for (var i = 0; i < grasses.length; i += 7) {
                 var sum = 0;
                 for (var j = 0; j < 7; j++) {
-                    if (isNaN(sum += grasses[i + j])) {
+                    if (isNaN(grasses[i + j])) {
                         break outside;
                     }
                     sum += grasses[i + j];
@@ -65826,16 +65830,21 @@ var render = function() {
       _c("forms", { on: { "form-event": _vm.adjustGrasses } }),
       _vm._v(" "),
       _vm.grasses.length > 0
-        ? _c(
-            "div",
-            { staticClass: "graphWrapper" },
-            [
-              _c("graph", { attrs: { grasses: _vm.grasses } }),
-              _vm._v(" "),
-              _c("info")
-            ],
-            1
-          )
+        ? _c("div", { staticClass: "graphWrapper" }, [
+            _c(
+              "div",
+              { staticClass: "graphWrapper" },
+              [_c("graph", { attrs: { grasses: _vm.grasses } })],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "graphWrapper" },
+              [_c("info", { attrs: { grasses: _vm.grasses } })],
+              1
+            )
+          ])
         : _vm._e()
     ],
     1
@@ -78919,7 +78928,7 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(21)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(243)
 /* template */
 var __vue_template__ = __webpack_require__(241)
 /* template functional */
@@ -78967,34 +78976,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("table", { staticClass: "table" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("tbody", [
+        _c("tr", [
+          _c("td", [_vm._v(_vm._s(_vm.sum))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.min))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.max))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.avg))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.median))])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("table", { staticClass: "table" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Min")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Max")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Average")])
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Sum")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("0")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("0")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("0")])
-          ])
-        ])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Min")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Max")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Average")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Median")])
       ])
     ])
   }
@@ -79041,6 +79058,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(error.response);
             });
         }
+    }
+});
+
+/***/ }),
+/* 243 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['grasses'],
+    data: function data() {
+        return {
+            sum: 0,
+            min: Math.min.apply(Math, _toConsumableArray(this.grasses)),
+            max: Math.max.apply(Math, _toConsumableArray(this.grasses)),
+            avg: 0,
+            median: 0
+        };
+    },
+
+    methods: {
+        calcSum: function calcSum(grasses) {
+            return grasses.reduce(function (prev, current, i, grasses) {
+                return prev + current;
+            });
+        },
+        calcAvg: function calcAvg(grasses) {
+            return calcSum(grasses) / grasses.length;
+        },
+        calcMedian: function calcMedian() {}
+    },
+    created: function created() {
+        console.log(this.calcSum(this.grasses));
+        //            this.calcSum(this.grasses)
+        //            this.calcAvg(this.grasses)
     }
 });
 

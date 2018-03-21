@@ -2,8 +2,12 @@
     <div class="container">
         <forms @form-event="adjustGrasses"></forms>
         <div v-if="grasses.length > 0" class="graphWrapper">
-            <graph :grasses="grasses"></graph>
-            <info></info>
+            <div class="graphWrapper">
+                <graph :grasses="grasses"></graph>
+            </div>
+            <div class="graphWrapper">
+                <info :grasses="grasses"></info>
+            </div>
         </div>
     </div>
 </template>
@@ -30,7 +34,7 @@
                 outside: for (let i = 0; i < grasses.length; i += 7) {
                     let sum = 0
                     for (let j = 0; j < 7; j++) {
-                        if (isNaN(sum += grasses[i + j])) {
+                        if (isNaN(grasses[i + j])) {
                             break outside
                         }
                         sum += grasses[i + j]
