@@ -1,39 +1,31 @@
 <template>
     <div class="container">
-        <input type="text" class="form-control" v-model="name" placeholder="Please enter GitHub user name">
-        <button type="button" class="btn btn-primary" @click="sendName">Send</button>
+        <forms @form-event="adjustGrasses"></forms>
         <div v-if="grasses.length > 0" class="graphWrapper">
             <graph :grasses="grasses"></graph>
+            <info></info>
         </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
-    import Graph from './Graph.vue'
+    import Forms from './components/Forms.vue'
+    import Graph from './components/Graph.vue'
+    import Info from './components/Info.vue'
 
     export default {
         components: {
-            Graph
+            Forms,
+            Graph,
+            Info,
         },
         data() {
             return {
-                name: '',
                 grasses: []
             }
         },
         methods: {
-            sendName() {
-                axios.post('/api/grasses', {
-                    name: this.name
-                })
-                    .then(response => {
-                        this.adjustGrasses(response.data)
-                    })
-                    .catch(error => {
-                        console.log(error.response)
-                    })
-            },
             adjustGrasses(grasses) {
                 outside: for (let i = 0; i < grasses.length; i += 7) {
                     let sum = 0
