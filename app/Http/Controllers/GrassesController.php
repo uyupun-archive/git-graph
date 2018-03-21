@@ -14,6 +14,10 @@ class GrassesController extends Controller
             return intval($element->attr('data-count'));
         });
 
-        return response($response, '200');
+        if ($response) {
+            return response($response, '200');
+        }
+
+        return response('Forbidden', '403');
     }
 }

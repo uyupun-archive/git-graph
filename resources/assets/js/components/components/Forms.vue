@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" class="form-control formName" v-model="name" placeholder="Please enter username">
+        <input type="text" class="form-control formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
         <button type="button" class="btn btn-primary formSend" @click="sendName">Send</button>
     </div>
 </template>
@@ -15,7 +15,7 @@
         methods: {
             sendName() {
                 this.$emit('form-data', {
-                    message: 'message',
+                    load: 'load',
                     name: this.name
                 })
                 axios.post('/api/grasses', {
@@ -25,7 +25,7 @@
                         this.$emit('form-grasses', response.data)
                     })
                     .catch(error => {
-                        console.log(error.response)
+                        this.$emit('form-grasses', 'You sent a bad request!')
                     })
             },
         }
