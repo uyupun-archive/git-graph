@@ -6,6 +6,7 @@
                 <span>GitGraph</span>
             </h1>
             <a href="https://github.com/tyokinuhata/git-graph" target="_blank" class="link">GitHub</a>
+            <a href="https://twitter.com/h_tyokinuhata" target="_blank" class="link">Twitter</a>
         </div>
     </div>
 </template>
