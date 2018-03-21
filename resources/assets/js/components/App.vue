@@ -1,34 +1,38 @@
 <template>
-    <div class="container">
-        <h1 class="title">GitGraph</h1>
-        <div class="formWrapper">
-            <forms @form-grasses="callBoth" @form-data="setData"></forms>
-        </div>
-        <div v-if="grasses.length > 0" class="graphWrapper">
-            <div class="graphWrapper">
-                <graph :grasses="grasses" :name="name"></graph>
+    <div>
+        <navi></navi>
+        <div class="container">
+            <div class="formWrapper">
+                <forms @form-grasses="callBoth" @form-data="setData"></forms>
             </div>
-            <div class="graphWrapper">
-                <info :grasses="grasses"></info>
+            <div v-if="grasses.length > 0" class="graphWrapper">
+                <div class="graphWrapper">
+                    <graph :grasses="grasses" :name="name"></graph>
+                </div>
+                <div class="graphWrapper">
+                    <info :grasses="grasses"></info>
+                </div>
             </div>
-        </div>
-        <div v-else-if="message.length > 0">
-            <p>{{ message }}</p>
-        </div>
-        <div v-else>
-            <div :class="load"></div>
+            <div v-else-if="message.length > 0">
+                <p>{{ message }}</p>
+            </div>
+            <div v-else>
+                <div :class="load"></div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
+    import Navi from './components/Navi.vue'
     import Forms from './components/Forms.vue'
     import Graph from './components/Graph.vue'
     import Info from './components/Info.vue'
 
     export default {
         components: {
+            Navi,
             Forms,
             Graph,
             Info,
@@ -70,12 +74,6 @@
 </script>
 
 <style lang="scss">
-    .title {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 48px;
-    }
-
     .formWrapper {
         margin-top: 10px;
         text-align: center;

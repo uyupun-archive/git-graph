@@ -32,7 +32,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .formName {
         display: inline-block;
         width: 200px;
