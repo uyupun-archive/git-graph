@@ -5,6 +5,12 @@ $ composer install
 $ npm i
 ```
 
+### Key generate
+
+```bash
+$ php artisan key:generate
+```
+
 ### Build
 
 ```bash
