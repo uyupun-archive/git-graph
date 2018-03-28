@@ -17,7 +17,7 @@
                 <p>{{ message }}</p>
             </div>
             <div v-else>
-                <div class="loadWrapper">
+                <div :class="load" class="loadWrapper">
                     <div class="load" :class="'load' + index"  v-for="index in 9" :key="index"></div>
                 </div>
             </div>
