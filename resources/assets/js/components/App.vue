@@ -17,7 +17,9 @@
                 <p>{{ message }}</p>
             </div>
             <div v-else>
-                <div :class="load"></div>
+                <div class="loadWrapper">
+                    <div class="load" :class="'load' + index"  v-for="index in 9" :key="index"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -43,7 +45,7 @@
                 days: [],
                 message: '',
                 load: '',
-                name: ''
+                name: '',
             }
         },
         methods: {
@@ -86,10 +88,73 @@
         text-align: center;
     }
 
+    .loadWrapper {
+        max-width: 90px;
+        height: 90px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transform: translateY(100%)
+    }
+
     .load {
-        width: 20px;
-        height: 20px;
-        background: red;
+        width: 25px;
+        height: 25px;
+        background: green;
+        opacity: 0;
+        animation: load 0.8s infinite;
+        @keyframes load {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+
+    .load1 {
+        animation-delay: 0s;
+    }
+
+    .load2 {
+        animation-delay: 0.1s;
+    }
+
+    .load3 {
+        animation-delay: 0.2s;
+    }
+
+    .load4 {
+        animation-delay: 0.7s;
+    }
+
+    .load5 {
+        visibility: hidden;
+    }
+
+    .load6 {
+        animation-delay: 0.3s;
+    }
+
+    .load7 {
+        animation-delay: 0.6s;
+    }
+
+    .load8 {
+        animation-delay: 0.5s;
+    }
+
+    .load9 {
+        animation-delay: 0.4s;
     }
 
     .msgWrapper {
