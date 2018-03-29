@@ -66321,7 +66321,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  width: 100%;\n  height: 55px;\n}\n.navContainer[data-v-c4b05250] {\n  max-width: 980px;\n  width: 100%;\n  margin: 0 auto;\n}\n.title[data-v-c4b05250] {\n  display: inline-block;\n  margin-right: 30px;\n  line-height: 55px;\n  font-size: 33px;\n  color: #fff;\n}\n.link[data-v-c4b05250] {\n  text-decoration: none;\n  font-weight: 600;\n  color: #fff;\n}\n", ""]);
+exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  width: 100%;\n  height: 55px;\n}\n.navContainer[data-v-c4b05250] {\n  max-width: 980px;\n  width: 100%;\n  margin: 0 auto;\n}\n.title[data-v-c4b05250] {\n  display: inline-block;\n  margin-right: 30px;\n  line-height: 55px;\n  font-size: 33px;\n  color: #fff;\n}\n.link[data-v-c4b05250] {\n  margin-right: 20px;\n  text-decoration: none;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n", ""]);
 
 // exports
 

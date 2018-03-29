@@ -33,8 +33,9 @@
     }
 
     .link {
+        margin-right: 20px;
         text-decoration: none;
         font-weight: 600;
-        color: #fff;
+        color: rgba(255,255,255,0.75);
     }
 </style>
