@@ -84,7 +84,7 @@
     }
 
     .infoWrapper {
-        margin-top: 10px;
+        margin-top: 5px;
         text-align: center;
     }
 
