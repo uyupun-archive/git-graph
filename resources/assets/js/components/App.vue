@@ -18,7 +18,7 @@
             </div>
             <div v-else>
                 <div :class="load" class="loadWrapper">
-                    <div class="load" :class="'load' + index"  v-for="index in 9" :key="index"></div>
+                    <div class="load-anime" :class="'load-anime' + index"  v-for="index in 9" :key="index"></div>
                 </div>
             </div>
         </div>
@@ -99,13 +99,13 @@
         transform: translateY(100%)
     }
 
-    .load {
+    .load-anime {
         width: 25px;
         height: 25px;
         background: green;
         opacity: 0;
-        animation: load 0.8s infinite;
-        @keyframes load {
+        animation: load-anime 0.8s infinite;
+        @keyframes load-anime {
             0% {
                 opacity: 0;
             }
@@ -121,39 +121,39 @@
         }
     }
 
-    .load1 {
+    .load-anime1 {
         animation-delay: 0s;
     }
 
-    .load2 {
+    .load-anime2 {
         animation-delay: 0.1s;
     }
 
-    .load3 {
+    .load-anime3 {
         animation-delay: 0.2s;
     }
 
-    .load4 {
+    .load-anime4 {
         animation-delay: 0.7s;
     }
 
-    .load5 {
+    .load-anime5 {
         visibility: hidden;
     }
 
-    .load6 {
+    .load-anime6 {
         animation-delay: 0.3s;
     }
 
-    .load7 {
+    .load-anime7 {
         animation-delay: 0.6s;
     }
 
-    .load8 {
+    .load-anime8 {
         animation-delay: 0.5s;
     }
 
-    .load9 {
+    .load-anime9 {
         animation-delay: 0.4s;
     }
 
