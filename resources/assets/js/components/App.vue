@@ -96,7 +96,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        transform: translateY(100%)
+        transform: translateY(100%);
+        visibility: hidden;
     }
 
     .load-anime {
@@ -119,6 +120,10 @@
                 opacity: 0;
             }
         }
+    }
+
+    .load {
+        visibility: visible;
     }
 
     .load-anime1 {
