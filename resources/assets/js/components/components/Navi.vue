@@ -5,11 +5,40 @@
                 <i class="fab fa-github"></i>
                 <span>GitGraph</span>
             </h1>
+            <input type="text" class="form-control formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
+            <button type="button" class="btn btn-primary formSend" @click="sendName">Send</button>
             <a href="https://github.com/tyokinuhata/git-graph" target="_blank" class="link">GitHub</a>
             <a href="https://twitter.com/h_tyokinuhata" target="_blank" class="link">Twitter</a>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                name: ''
+            }
+        },
+        methods: {
+            sendName() {
+                this.$emit('form-data', {
+                    load: 'load',
+                    name: this.name
+                })
+                axios.post('/api/grasses', {
+                    name: this.name
+                })
+                    .then(response => {
+                        this.$emit('form-grasses', response.data)
+                    })
+                    .catch(error => {
+                        this.$emit('form-grasses', 'You sent a bad request!')
+                    })
+            },
+        }
+    }
+</script>
 
 <style lang="scss" scoped>
     .nav {
@@ -30,6 +59,20 @@
         line-height: 55px;
         font-size: 33px;
         color: #fff;
+    }
+
+    .formName {
+        display: inline-block;
+        width: 200px;
+        vertical-align : middle;
+        margin-right: 3px;
+    }
+
+    .graphWrapper {
+        margin-top: 20px;
+        border-radius: 3px;
+        padding: 5px;
+        background: #fff;
     }
 
     .link {

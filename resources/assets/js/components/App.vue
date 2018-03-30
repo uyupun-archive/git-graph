@@ -1,10 +1,7 @@
 <template>
     <div>
-        <navi></navi>
+        <navi @form-grasses="callBoth" @form-data="setData"></navi>
         <div class="container">
-            <div class="formWrapper">
-                <forms @form-grasses="callBoth" @form-data="setData"></forms>
-            </div>
             <div v-if="weeks.length > 0">
                 <div class="graphWrapper">
                     <graph :weeks="weeks" :days="days" :name="name"></graph>
@@ -26,16 +23,13 @@
 </template>
 
 <script>
-    import axios from 'axios'
     import Navi from './components/Navi.vue'
-    import Forms from './components/Forms.vue'
     import Graph from './components/Graph.vue'
     import Info from './components/Info.vue'
 
     export default {
         components: {
             Navi,
-            Forms,
             Graph,
             Info,
         },
