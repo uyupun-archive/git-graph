@@ -66311,7 +66311,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  width: 100%;\n  height: 55px;\n}\n.navContainer[data-v-c4b05250] {\n  max-width: 980px;\n  width: 100%;\n  margin: 0 auto;\n}\n.title[data-v-c4b05250] {\n  display: inline-block;\n  margin-right: 30px;\n  line-height: 55px;\n  font-size: 33px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  display: inline-block;\n  width: 200px;\n  vertical-align: middle;\n  margin-right: 3px;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  margin-right: 20px;\n  text-decoration: none;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n", ""]);
+exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  padding: 5px 0;\n}\n.navContainer[data-v-c4b05250] {\n  max-width: 980px;\n  width: 100%;\n  margin: 0 auto;\n}\n.title[data-v-c4b05250] {\n  margin: 0;\n  margin-right: 30px;\n  padding: 0;\n  font-size: 30px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  display: inline-block;\n  width: 200px;\n  vertical-align: middle;\n  margin-right: 3px;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n", ""]);
 
 // exports
 
@@ -66324,68 +66324,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "nav" }, [
-    _c("div", { staticClass: "navContainer" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.name,
-            expression: "name"
-          }
-        ],
-        staticClass: "form-control formName",
-        attrs: {
-          type: "text",
-          placeholder: "Please enter username",
-          maxlength: "39",
-          autofocus: ""
-        },
-        domProps: { value: _vm.name },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+  return _c("nav", { staticClass: "navbar navbar-expand-lg nav" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "collapse navbar-collapse", attrs: { id: "Navber" } },
+      [
+        _c("form", { staticClass: "form-inline my-2 my-lg-0" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.name,
+                expression: "name"
+              }
+            ],
+            staticClass: "form-control mr-sm-2 formName",
+            attrs: {
+              type: "search",
+              placeholder: "Please enter username",
+              maxlength: "39",
+              autofocus: ""
+            },
+            domProps: { value: _vm.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.name = $event.target.value
+              }
             }
-            _vm.name = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary formSend",
-          attrs: { type: "button" },
-          on: { click: _vm.sendName }
-        },
-        [_vm._v("Send")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "link",
-          attrs: {
-            href: "https://github.com/tyokinuhata/git-graph",
-            target: "_blank"
-          }
-        },
-        [_vm._v("GitHub")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "link",
-          attrs: { href: "https://twitter.com/h_tyokinuhata", target: "_blank" }
-        },
-        [_vm._v("Twitter")]
-      )
-    ])
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary formSend my-2 my-sm-0",
+              attrs: { type: "button" },
+              on: { click: _vm.sendName }
+            },
+            [_vm._v("Send")]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(2)
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -66393,10 +66382,64 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "title" }, [
+    return _c("h1", { staticClass: "navbar-brand title" }, [
       _c("i", { staticClass: "fab fa-github" }),
       _vm._v(" "),
       _c("span", [_vm._v("GitGraph")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#Navber",
+          "aria-controls": "Navber",
+          "aria-expanded": "false",
+          "aria-label": "ナビゲーションの切替"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "navbar-nav mr-auto" }, [
+      _c("li", { staticClass: "nav-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link link",
+            attrs: {
+              href: "https://github.com/tyokinuhata/git-graph",
+              target: "_blank"
+            }
+          },
+          [_vm._v("GitHub")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link link",
+            attrs: {
+              href: "https://twitter.com/h_tyokinuhata",
+              target: "_blank"
+            }
+          },
+          [_vm._v("Twitter")]
+        )
+      ])
     ])
   }
 ]
@@ -79709,6 +79752,18 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
