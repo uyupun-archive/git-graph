@@ -10,8 +10,10 @@
             </button>
 
             <div class="collapse navbar-collapse" id="Navber">
-                <input type="text" class="form-control mr-sm-2 formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
-                <button type="button" class="btn btn-primary formSend my-2 my-sm-0" @click="sendName">Send</button>
+                <div class="form-inline my-2 my-lg-0">
+                    <input type="text" class="form-control mr-sm-2 formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
+                    <button type="button" class="btn btn-primary formSend my-2 my-sm-0" @click="sendName">Send</button>
+                </div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link link" href="https://github.com/tyokinuhata/git-graph" target="_blank">GitHub</a>

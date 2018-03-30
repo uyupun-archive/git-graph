@@ -66334,42 +66334,44 @@ var render = function() {
         "div",
         { staticClass: "collapse navbar-collapse", attrs: { id: "Navber" } },
         [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.name,
-                expression: "name"
-              }
-            ],
-            staticClass: "form-control mr-sm-2 formName",
-            attrs: {
-              type: "text",
-              placeholder: "Please enter username",
-              maxlength: "39",
-              autofocus: ""
-            },
-            domProps: { value: _vm.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", { staticClass: "form-inline my-2 my-lg-0" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
                 }
-                _vm.name = $event.target.value
+              ],
+              staticClass: "form-control mr-sm-2 formName",
+              attrs: {
+                type: "text",
+                placeholder: "Please enter username",
+                maxlength: "39",
+                autofocus: ""
+              },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
               }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary formSend my-2 my-sm-0",
-              attrs: { type: "button" },
-              on: { click: _vm.sendName }
-            },
-            [_vm._v("Send")]
-          ),
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary formSend my-2 my-sm-0",
+                attrs: { type: "button" },
+                on: { click: _vm.sendName }
+              },
+              [_vm._v("Send")]
+            )
+          ]),
           _vm._v(" "),
           _vm._m(2)
         ]
@@ -79752,6 +79754,8 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
