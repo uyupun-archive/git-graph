@@ -5,6 +5,12 @@ $ composer install
 $ npm i
 ```
 
+### Create .env
+
+```bash
+$ cp .env.example .env
+```
+
 ### Key generate
 
 ```bash
