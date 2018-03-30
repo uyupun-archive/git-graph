@@ -66311,7 +66311,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  padding: 5px 0;\n}\n.navContainer[data-v-c4b05250] {\n  max-width: 980px;\n  width: 100%;\n  margin: 0 auto;\n}\n.title[data-v-c4b05250] {\n  margin: 0;\n  margin-right: 30px;\n  padding: 0;\n  font-size: 30px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  display: inline-block;\n  width: 200px;\n  vertical-align: middle;\n  margin-right: 3px;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n", ""]);
+exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  padding: 5px 0;\n}\n.title[data-v-c4b05250] {\n  margin: 0;\n  margin-right: 20px;\n  padding: 0;\n  font-size: 30px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  width: 200px;\n  height: 30px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n  color: #fff;\n}\n.formName[data-v-c4b05250]:focus {\n    background: #4b4f54;\n}\n.formSend[data-v-c4b05250] {\n  margin-right: 20px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n}\n.formSend[data-v-c4b05250]:hover {\n    background: #4b4f54;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n.link[data-v-c4b05250]:hover {\n    color: #fff;\n}\n", ""]);
 
 // exports
 
@@ -66325,15 +66325,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("nav", { staticClass: "navbar navbar-expand-lg nav" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "collapse navbar-collapse", attrs: { id: "Navber" } },
-      [
-        _c("form", { staticClass: "form-inline my-2 my-lg-0" }, [
+    _c("div", { staticClass: "container" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "collapse navbar-collapse", attrs: { id: "Navber" } },
+        [
           _c("input", {
             directives: [
               {
@@ -66345,7 +66345,7 @@ var render = function() {
             ],
             staticClass: "form-control mr-sm-2 formName",
             attrs: {
-              type: "search",
+              type: "text",
               placeholder: "Please enter username",
               maxlength: "39",
               autofocus: ""
@@ -66369,12 +66369,12 @@ var render = function() {
               on: { click: _vm.sendName }
             },
             [_vm._v("Send")]
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(2)
-      ]
-    )
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
