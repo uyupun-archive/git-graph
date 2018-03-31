@@ -5,8 +5,10 @@
                 <i class="fab fa-github"></i>
                 <span>GitGraph</span>
             </h1>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
-                <span class="navbar-toggler-icon"></span>
+            <button type="button" class="navbar-toggler navIconWrapper" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+                <div class="navIcon">
+                    <div v-for="index in 4" :class="'navIconBox' + index" class="navIconBox"></div>
+                </div>
             </button>
 
             <div class="collapse navbar-collapse" id="Navber">
@@ -58,6 +60,40 @@
     .nav {
         background: #24292e;
         padding: 5px 0;
+    }
+
+    .navIconWrapper {
+        outline: none;
+    }
+
+    .navIcon {
+        /*display: inline-block;*/
+        width: 20px;
+        height: 20px;
+        background: red;
+        font-size: 0;
+
+        &Box {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+        }
+
+        &Box1 {
+            background: rgb(198, 228, 139);
+        }
+
+        &Box2 {
+            background: rgb(123, 201, 111);
+        }
+
+        &Box3 {
+            background: rgb(35, 154, 59);
+        }
+
+        &Box4 {
+            background: rgb(25, 97, 39);;
+        }
     }
 
     .title {
