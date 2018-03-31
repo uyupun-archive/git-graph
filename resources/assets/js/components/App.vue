@@ -162,8 +162,10 @@
     }
 
     .msgWrapper {
-        margin-top: 10px;
-        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
         font-size: 32px;
     }
 </style>

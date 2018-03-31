@@ -48,7 +48,7 @@
                         this.$emit('form-grasses', response.data)
                     })
                     .catch(error => {
-                        this.$emit('form-grasses', 'You sent a bad request!')
+                        this.$emit('form-grasses', 'You sent a bad request 😔')
                     })
             },
         }
