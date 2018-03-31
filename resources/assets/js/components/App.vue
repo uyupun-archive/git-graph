@@ -64,6 +64,10 @@
                 }
             },
             setData(data) {
+                this.weeks = []
+                this.days = []
+                this.message = ''
+
                 this.load = data.load
                 this.name = data.name
             }

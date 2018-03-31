@@ -66219,6 +66219,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         setData: function setData(data) {
+            this.weeks = [];
+            this.days = [];
+            this.message = '';
+
             this.load = data.load;
             this.name = data.name;
         }
