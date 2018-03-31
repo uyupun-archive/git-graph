@@ -66400,8 +66400,7 @@ var render = function() {
             "data-toggle": "collapse",
             "data-target": "#Navber",
             "aria-controls": "Navber",
-            "aria-expanded": "false",
-            "aria-label": "ナビゲーションの切替"
+            "aria-expanded": "false"
           }
         },
         [
@@ -66441,6 +66440,15 @@ var render = function() {
               },
               domProps: { value: _vm.name },
               on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.sendName($event)
+                },
                 input: function($event) {
                   if ($event.target.composing) {
                     return

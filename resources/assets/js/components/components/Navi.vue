@@ -5,14 +5,14 @@
                 <i class="fab fa-github"></i>
                 <span>GitGraph</span>
             </h1>
-            <button type="button" class="navbar-toggler navIconWrapper" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <button type="button" class="navbar-toggler navIconWrapper" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false">
                 <div class="navIcon">
                     <div v-for="index in 4" :class="'navIconBox' + index" class="navIconBox"></div>
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="Navber">
                 <div class="form-inline my-2 my-lg-0">
-                    <input type="text" class="form-control mr-sm-2 formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
+                    <input type="text" class="form-control mr-sm-2 formName" v-model="name" @keyup.enter="sendName" placeholder="Please enter username" maxlength="39" autofocus>
                     <button type="button" class="btn btn-primary formSend my-2 my-sm-0" @click="sendName">Send</button>
                 </div>
                 <ul class="navbar-nav mr-auto">
