@@ -37,12 +37,13 @@
         },
         methods: {
             sendName() {
+                const name = this.name.trim()
                 this.$emit('form-data', {
                     load: 'load',
-                    name: this.name
+                    name: name
                 })
                 axios.post('/api/grasses', {
-                    name: this.name
+                    name: name
                 })
                     .then(response => {
                         this.$emit('form-grasses', response.data)
