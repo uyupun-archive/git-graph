@@ -66102,7 +66102,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "\n.formWrapper {\n  margin-top: 10px;\n  text-align: center;\n}\n.infoWrapper {\n  margin-top: 5px;\n  text-align: center;\n}\n.loadWrapper {\n  max-width: 90px;\n  height: 90px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translateY(-50%) translateX(-50%);\n          transform: translateY(-50%) translateX(-50%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  visibility: hidden;\n}\n.load-anime {\n  width: 25px;\n  height: 25px;\n  background: green;\n  opacity: 0;\n  -webkit-animation: load-anime 0.8s infinite;\n          animation: load-anime 0.8s infinite;\n}\n@-webkit-keyframes load-anime {\n0% {\n    opacity: 0;\n}\n25% {\n    opacity: 1;\n}\n50% {\n    opacity: 0;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes load-anime {\n0% {\n    opacity: 0;\n}\n25% {\n    opacity: 1;\n}\n50% {\n    opacity: 0;\n}\n100% {\n    opacity: 0;\n}\n}\n.load {\n  visibility: visible;\n}\n.load-anime1 {\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n.load-anime2 {\n  -webkit-animation-delay: 0.1s;\n          animation-delay: 0.1s;\n}\n.load-anime3 {\n  -webkit-animation-delay: 0.2s;\n          animation-delay: 0.2s;\n}\n.load-anime4 {\n  -webkit-animation-delay: 0.7s;\n          animation-delay: 0.7s;\n}\n.load-anime5 {\n  visibility: hidden;\n}\n.load-anime6 {\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n}\n.load-anime7 {\n  -webkit-animation-delay: 0.6s;\n          animation-delay: 0.6s;\n}\n.load-anime8 {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n.load-anime9 {\n  -webkit-animation-delay: 0.4s;\n          animation-delay: 0.4s;\n}\n.msgWrapper {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translateY(-50%) translateX(-50%);\n          transform: translateY(-50%) translateX(-50%);\n  font-size: 32px;\n}\n", ""]);
+exports.push([module.i, "\n.formWrapper {\n  margin-top: 10px;\n  text-align: center;\n}\n.infoWrapper {\n  margin-top: 5px;\n  text-align: center;\n}\n.msgWrapper {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translateY(-50%) translateX(-50%);\n          transform: translateY(-50%) translateX(-50%);\n  font-size: 32px;\n}\n", ""]);
 
 // exports
 
@@ -66148,10 +66148,12 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi_vue__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Graph_vue__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Graph_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Info_vue__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Info_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Load_vue__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Load_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Load_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Graph_vue__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Graph_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Info_vue__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Info_vue__);
 //
 //
 //
@@ -66174,8 +66176,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
+
 
 
 
@@ -66184,8 +66185,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi_vue___default.a,
-        Graph: __WEBPACK_IMPORTED_MODULE_1__components_Graph_vue___default.a,
-        Info: __WEBPACK_IMPORTED_MODULE_2__components_Info_vue___default.a
+        Load: __WEBPACK_IMPORTED_MODULE_1__components_Load_vue___default.a,
+        Graph: __WEBPACK_IMPORTED_MODULE_2__components_Graph_vue___default.a,
+        Info: __WEBPACK_IMPORTED_MODULE_3__components_Info_vue___default.a
     },
     data: function data() {
         return {
@@ -79785,19 +79787,7 @@ var render = function() {
             ? _c("div", { staticClass: "msgWrapper" }, [
                 _c("p", [_vm._v(_vm._s(_vm.message))])
               ])
-            : _c("div", [
-                _c(
-                  "div",
-                  { staticClass: "loadWrapper", class: _vm.load },
-                  _vm._l(9, function(index) {
-                    return _c("div", {
-                      key: index,
-                      staticClass: "load-anime",
-                      class: "load-anime" + index
-                    })
-                  })
-                )
-              ])
+            : _c("div", [_c("load", { attrs: { load: _vm.load } })], 1)
       ])
     ],
     1
@@ -79818,6 +79808,154 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(254)
+}
+var normalizeComponent = __webpack_require__(9)
+/* script */
+var __vue_script__ = __webpack_require__(257)
+/* template */
+var __vue_template__ = __webpack_require__(256)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-e33effd0"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/components/Load.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e33effd0", Component.options)
+  } else {
+    hotAPI.reload("data-v-e33effd0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 253 */,
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(255);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(22)("3cd461a0", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e33effd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Load.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e33effd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Load.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(21)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.loadWrapper[data-v-e33effd0] {\n  max-width: 90px;\n  height: 90px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translateY(-50%) translateX(-50%);\n          transform: translateY(-50%) translateX(-50%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  visibility: hidden;\n}\n.load-anime[data-v-e33effd0] {\n  width: 25px;\n  height: 25px;\n  background: green;\n  opacity: 0;\n  -webkit-animation: load-anime-data-v-e33effd0 0.8s infinite;\n          animation: load-anime-data-v-e33effd0 0.8s infinite;\n}\n@-webkit-keyframes load-anime-data-v-e33effd0 {\n0% {\n    opacity: 0;\n}\n25% {\n    opacity: 1;\n}\n50% {\n    opacity: 0;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes load-anime-data-v-e33effd0 {\n0% {\n    opacity: 0;\n}\n25% {\n    opacity: 1;\n}\n50% {\n    opacity: 0;\n}\n100% {\n    opacity: 0;\n}\n}\n.load[data-v-e33effd0] {\n  visibility: visible;\n}\n.load-anime1[data-v-e33effd0] {\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n.load-anime2[data-v-e33effd0] {\n  -webkit-animation-delay: 0.1s;\n          animation-delay: 0.1s;\n}\n.load-anime3[data-v-e33effd0] {\n  -webkit-animation-delay: 0.2s;\n          animation-delay: 0.2s;\n}\n.load-anime4[data-v-e33effd0] {\n  -webkit-animation-delay: 0.7s;\n          animation-delay: 0.7s;\n}\n.load-anime5[data-v-e33effd0] {\n  visibility: hidden;\n}\n.load-anime6[data-v-e33effd0] {\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n}\n.load-anime7[data-v-e33effd0] {\n  -webkit-animation-delay: 0.6s;\n          animation-delay: 0.6s;\n}\n.load-anime8[data-v-e33effd0] {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n.load-anime9[data-v-e33effd0] {\n  -webkit-animation-delay: 0.4s;\n          animation-delay: 0.4s;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "loadWrapper", class: _vm.load },
+    _vm._l(9, function(index) {
+      return _c("div", {
+        key: index,
+        staticClass: "load-anime",
+        class: "load-anime" + index
+      })
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e33effd0", module.exports)
+  }
+}
+
+/***/ }),
+/* 257 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['load']
+});
 
 /***/ })
 /******/ ]);
