@@ -72,7 +72,7 @@
                 this.name = data.name
             }
         },
-        created() {
+        mounted() {
             const messages = [
                 'Simpler is usually better',
                 'Done is better than perfect',

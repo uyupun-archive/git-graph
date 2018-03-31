@@ -66229,7 +66229,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.name = data.name;
         }
     },
-    created: function created() {
+    mounted: function mounted() {
         var messages = ['Simpler is usually better', 'Done is better than perfect', 'Stay hungry, stay foolish', 'Life is not fair. Get used to it.', 'Reinventing the wheel', 'We are What We Choose'];
         var random = Math.floor(Math.random() * messages.length);
         this.message = messages[random];
