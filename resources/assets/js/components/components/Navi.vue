@@ -10,7 +10,6 @@
                     <div v-for="index in 4" :class="'navIconBox' + index" class="navIconBox"></div>
                 </div>
             </button>
-
             <div class="collapse navbar-collapse" id="Navber">
                 <div class="form-inline my-2 my-lg-0">
                     <input type="text" class="form-control mr-sm-2 formName" v-model="name" placeholder="Please enter username" maxlength="39" autofocus>
@@ -67,7 +66,6 @@
     }
 
     .navIcon {
-        /*display: inline-block;*/
         width: 20px;
         height: 20px;
         background: red;
