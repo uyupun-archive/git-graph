@@ -66375,13 +66375,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendName: function sendName() {
             var _this = this;
 
-            var name = this.name.trim();
+            var names = this.name.trim().split(' ');
             this.$emit('form-data', {
                 load: 'load',
-                name: name
+                name: names[0]
             });
             axios.post('/api/grasses', {
-                name: name
+                name: names[0]
             }).then(function (response) {
                 _this.$emit('form-grasses', response.data);
             }).catch(function (error) {
