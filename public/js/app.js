@@ -66226,6 +66226,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.load = data.load;
             this.name = data.name;
         }
+    },
+    created: function created() {
+        var messages = ['Simpler is usually better', 'Done is better than perfect', 'Stay hungry, stay foolish', 'Life is not fair. Get used to it.', 'Reinventing the wheel', 'We are What We Choose'];
+        var random = Math.floor(Math.random() * messages.length);
+        this.message = messages[random];
     }
 });
 
@@ -66315,7 +66320,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  padding: 5px 0;\n}\n.navIconWrapper[data-v-c4b05250] {\n  outline: none;\n}\n.navIcon[data-v-c4b05250] {\n  width: 20px;\n  height: 20px;\n  background: red;\n  font-size: 0;\n}\n.navIconBox[data-v-c4b05250] {\n    display: inline-block;\n    width: 10px;\n    height: 10px;\n}\n.navIconBox1[data-v-c4b05250] {\n    background: #c6e48b;\n}\n.navIconBox2[data-v-c4b05250] {\n    background: #7bc96f;\n}\n.navIconBox3[data-v-c4b05250] {\n    background: #239a3b;\n}\n.navIconBox4[data-v-c4b05250] {\n    background: #196127;\n}\n.title[data-v-c4b05250] {\n  margin: 0;\n  margin-right: 20px;\n  padding: 0;\n  font-size: 30px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  width: 200px;\n  height: 30px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n  color: #fff;\n}\n.formName[data-v-c4b05250]:focus {\n    background: #4b4f54;\n}\n.formSend[data-v-c4b05250] {\n  margin-right: 20px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n}\n.formSend[data-v-c4b05250]:hover {\n    background: #4b4f54;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n.link[data-v-c4b05250]:hover {\n    color: #fff;\n}\n", ""]);
+exports.push([module.i, "\n.nav[data-v-c4b05250] {\n  background: #24292e;\n  padding: 5px 0;\n}\n.navIconWrapper[data-v-c4b05250] {\n  outline: none;\n}\n.navIcon[data-v-c4b05250] {\n  width: 20px;\n  height: 20px;\n  font-size: 0;\n}\n.navIconBox[data-v-c4b05250] {\n    display: inline-block;\n    width: 10px;\n    height: 10px;\n}\n.navIconBox1[data-v-c4b05250] {\n    background: #c6e48b;\n}\n.navIconBox2[data-v-c4b05250] {\n    background: #7bc96f;\n}\n.navIconBox3[data-v-c4b05250] {\n    background: #239a3b;\n}\n.navIconBox4[data-v-c4b05250] {\n    background: #196127;\n}\n.title[data-v-c4b05250] {\n  margin: 0;\n  margin-right: 20px;\n  padding: 0;\n  font-size: 30px;\n  color: #fff;\n}\n.formName[data-v-c4b05250] {\n  width: 200px;\n  height: 30px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n  color: #fff;\n}\n.formName[data-v-c4b05250]:focus {\n    background: #4b4f54;\n}\n.formSend[data-v-c4b05250] {\n  margin-right: 20px;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  background: #3f4449;\n}\n.formSend[data-v-c4b05250]:hover {\n    background: #4b4f54;\n}\n.graphWrapper[data-v-c4b05250] {\n  margin-top: 20px;\n  border-radius: 3px;\n  padding: 5px;\n  background: #fff;\n}\n.link[data-v-c4b05250] {\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.75);\n}\n.link[data-v-c4b05250]:hover {\n    color: #fff;\n}\n", ""]);
 
 // exports
 

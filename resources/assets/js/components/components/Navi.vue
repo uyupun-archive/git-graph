@@ -68,7 +68,6 @@
     .navIcon {
         width: 20px;
         height: 20px;
-        background: red;
         font-size: 0;
 
         &Box {

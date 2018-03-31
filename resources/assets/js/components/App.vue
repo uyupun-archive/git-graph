@@ -71,6 +71,18 @@
                 this.load = data.load
                 this.name = data.name
             }
+        },
+        created() {
+            const messages = [
+                'Simpler is usually better',
+                'Done is better than perfect',
+                'Stay hungry, stay foolish',
+                'Life is not fair. Get used to it.',
+                'Reinventing the wheel',
+                'We are What We Choose'
+            ]
+            const random = Math.floor(Math.random() * messages.length)
+            this.message = messages[random]
         }
     }
 </script>
