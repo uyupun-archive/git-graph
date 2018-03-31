@@ -1,8 +1,8 @@
 <template>
     <div>
         <caption>Weekly</caption>
-        <table class="table">
-            <thead>
+        <table class="table table-striped">
+            <thead class="thead-dark">
                 <tr>
                     <th scope="col">Sum</th>
                     <th scope="col">Avg</th>
@@ -23,8 +23,8 @@
         </table>
 
         <caption>Daily</caption>
-        <table class="table">
-            <thead>
+        <table class="table table-striped">
+            <thead class="thead-dark">
             <tr>
                 <th scope="col">Sum</th>
                 <th scope="col">Avg</th>
