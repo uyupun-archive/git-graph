@@ -42,7 +42,7 @@
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'weekss',
+                                labelString: 'weeks',
                                 fontSize: 14
                             },
                         }],
