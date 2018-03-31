@@ -89,12 +89,13 @@
     .loadWrapper {
         max-width: 90px;
         height: 90px;
-        margin-right: auto;
-        margin-left: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        transform: translateY(100%);
         visibility: hidden;
     }
 
