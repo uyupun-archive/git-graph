@@ -66152,7 +66152,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Load_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Load_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Graph_vue__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Graph_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Info_vue__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Info_vue__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Info_vue__);
 //
 //
@@ -79629,89 +79629,15 @@ module.exports = {
 
 
 /***/ }),
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("navi", {
-        on: { "form-grasses": _vm.callBoth, "form-data": _vm.setData }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _vm.weeks.length > 0
-          ? _c("div", [
-              _c(
-                "div",
-                { staticClass: "graphWrapper" },
-                [
-                  _c("graph", {
-                    attrs: { weeks: _vm.weeks, days: _vm.days, name: _vm.name }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "infoWrapper" },
-                [_c("info", { attrs: { weeks: _vm.weeks, days: _vm.days } })],
-                1
-              )
-            ])
-          : _vm.message.length > 0
-            ? _c("div", { staticClass: "msgWrapper" }, [
-                _c("p", [_vm._v(_vm._s(_vm.message))])
-              ])
-            : _c("div", [_c("load", { attrs: { load: _vm.load } })], 1)
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-8142f38c", module.exports)
-  }
-}
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(7)
 /* script */
-var __vue_script__ = __webpack_require__(258)
+var __vue_script__ = __webpack_require__(244)
 /* template */
-var __vue_template__ = __webpack_require__(259)
+var __vue_template__ = __webpack_require__(245)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79750,7 +79676,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 258 */
+/* 244 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79864,7 +79790,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 /***/ }),
-/* 259 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -79959,6 +79885,68 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-2af9fbe0", module.exports)
   }
 }
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navi", {
+        on: { "form-grasses": _vm.callBoth, "form-data": _vm.setData }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _vm.weeks.length > 0
+          ? _c("div", [
+              _c(
+                "div",
+                { staticClass: "graphWrapper" },
+                [
+                  _c("graph", {
+                    attrs: { weeks: _vm.weeks, days: _vm.days, name: _vm.name }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "infoWrapper" },
+                [_c("info", { attrs: { weeks: _vm.weeks, days: _vm.days } })],
+                1
+              )
+            ])
+          : _vm.message.length > 0
+            ? _c("div", { staticClass: "msgWrapper" }, [
+                _c("p", [_vm._v(_vm._s(_vm.message))])
+              ])
+            : _c("div", [_c("load", { attrs: { load: _vm.load } })], 1)
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-8142f38c", module.exports)
+  }
+}
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
