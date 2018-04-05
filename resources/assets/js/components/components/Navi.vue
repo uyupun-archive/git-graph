@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg nav">
+    <nav class="navbar navbar-expand-lg nav py-1 px-3">
         <div class="container">
             <h1 class="navbar-brand title">
                 <i class="fab fa-github"></i>
@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="Navber">
                 <div class="form-inline my-2 my-lg-0">
                     <input type="text" class="form-control mr-sm-2 formName" v-model="name" @keyup.enter="sendName" placeholder="Please enter username" maxlength="39" autofocus>
-                    <button type="button" class="btn btn-primary formSend my-2 my-sm-0" @click="sendName">Send</button>
+                    <button type="button" class="btn btn-primary formSend my-2 my-sm-0 mx-1" @click="sendName">Send</button>
                 </div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -59,7 +59,6 @@
 <style lang="scss" scoped>
     .nav {
         background: #24292e;
-        padding: 5px 0;
     }
 
     .navIconWrapper {
@@ -124,13 +123,6 @@
         &:hover {
             background: #4b4f54;
         }
-    }
-
-    .graphWrapper {
-        margin-top: 20px;
-        border-radius: 3px;
-        padding: 5px;
-        background: #fff;
     }
 
     .link {

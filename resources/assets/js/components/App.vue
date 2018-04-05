@@ -93,6 +93,13 @@
         text-align: center;
     }
 
+    .graphWrapper {
+        margin-top: 20px;
+        border-radius: 3px;
+        padding: 5px;
+        background: #fff;
+    }
+
     .infoWrapper {
         margin-top: 5px;
         text-align: center;
